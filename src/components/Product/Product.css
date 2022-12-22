@@ -1,0 +1,56 @@
+.product {
+    width: 380px;
+    max-height: 600px;
+    background-color: rgba(82, 169, 223, 0.31);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.product__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.product__subtitle {
+    font-family: 'Comfortaa', cursive;
+    flex-weight: 400;
+    background-color: #f7e4a1;
+    padding: 3px 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: grey;
+}
+
+.product__title {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    padding: 3px 5px;
+    font-size: 23px;
+    color: #5d6262;
+    margin-right: 15px;
+}
+
+.product__price {
+    padding: 5px 10px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    color: black;
+}
+
+.product__img {
+
+    max-width: 250px;
+}
+
+.product__img img {
+    border-radius: 20px;
+    width: 100%;
+}

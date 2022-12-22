@@ -1,0 +1,15 @@
+.footer {
+    background-color: rgba(212, 212, 212, 0.46);
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__inner a {
+    color: rgba(26, 131, 198, 0.44);
+}
