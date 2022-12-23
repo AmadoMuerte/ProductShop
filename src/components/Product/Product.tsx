@@ -1,19 +1,20 @@
 import React from 'react';
 import './Product.css'
 
-function Product() {
+function Product(props : {title: string, price: number, category: string, image: string}) {
+
     return (
         <div className='product'>
             <div className='product__top'>
                 <h2 className="product__title">
-                    название продукта
+                    {props.title}
                 </h2>
-                <p className='product__subtitle'>Категория</p>
+                <p className='product__subtitle'>{props.category}</p>
             </div>
             <div className={'product__img'}>
-                <img src="https://imge.com/wp-content/uploads/2019/01/imge-service-logo.png" alt=""/>
+                < img src={props.image} alt="product" />
             </div>
-            <p className='product__price'>500$</p>
+            <p className='product__price'>{`${props.price} $` }</p>
         </div>
     );
 }

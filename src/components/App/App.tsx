@@ -1,5 +1,5 @@
 
-//import axios from "axios";
+
 
 // import Button from '@mui/material/Button';
 import './App.css'
@@ -10,18 +10,9 @@ import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 
 function App() {
-  //   let [products, setProducts] = useState([])
+
   //
-  //   useEffect( () => {
-  //       const getProducts =  async () => {
-  //           const result = await axios.get('https://fakestoreapi.com/products')
-  //               .then ((response: any) => {
-  //                   setProducts(response.data)
   //
-  //               })
-  //       }
-  //       getProducts()
-  //   }, [])
   //
   //   // let prod = products.map(
   //   //     (item: {

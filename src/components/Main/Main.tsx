@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css'
-import ProductList from "../ProductList/ProductList/ProductList";
+import ProductList from "../ProductList/ProductList";
 
 function Main() {
     return (
