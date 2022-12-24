@@ -5,3 +5,4 @@ technologies :
 - React
 - Redux-toolkit
 - TypeScript 
+- axios
