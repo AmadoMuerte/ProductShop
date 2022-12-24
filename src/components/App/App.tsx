@@ -1,40 +1,22 @@
-
-
-
-// import Button from '@mui/material/Button';
 import './App.css'
-import Header from "../Header/Header";
-// @ts-ignore
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Footer from "../Footer/Footer";
+
+import Header from "../Header/Header";
 import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
+import Basket from "../Basket/Basket";
+import ProductCard from "../ProductCard/ProductCard";
+
+import {useSelector} from "react-redux";
+import {RootState} from "../../store/store";
 
 function App() {
 
-  //
-  //
-  //
-  //   // let prod = products.map(
-  //   //     (item: {
-  //   //         price: number,
-  //   //         title: string,
-  //   //         image: string
-  //   //     }) => {
-  //   //     if (products) {
-  //   //         console.log(item)
-  //   //
-  //   //         return (
-  //   //             <div>
-  //   //                 <div>{item.title}</div>
-  //   //                 <img src={item.image} alt="product" width={100}/>
-  //   //                 <div>{`${item.price} $`}</div>
-  //   //             </div>
-  //   //         )
-  //   //     }
-  //   // })
-  //
-  return (
+    const id = useSelector((state: RootState) => state.products.idProduct)
 
+
+
+    return (
     <BrowserRouter>
         <div className="app">
             <div className={'content'}>
@@ -45,8 +27,12 @@ function App() {
                         element={<Main/>}
                     />
                     <Route
+                        path = {`/products/:id`}
+                        element={<ProductCard />}
+                    />
+                    <Route
                         path='/basket'
-                        element={''}
+                        element={<Basket/>}
                     />
                 </Routes>
             </div>

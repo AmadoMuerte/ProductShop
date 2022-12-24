@@ -1,0 +1,34 @@
+.product-skeleton {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 10px 10px 0;
+    background-color: rgba(203, 202, 202, 0.4);
+    position: relative;
+}
+
+.skeleton {
+    background-color: rgb(244, 241, 241);
+    position: absolute;
+    width: 2%;
+    height: 100%;
+    animation: 4s infinite;
+    animation-name: switchSkeleton;
+    top: 0;
+    left: 0;
+    filter: blur(6px);
+}
+
+@keyframes switchSkeleton {
+    0% {
+        left: -50px;
+    }
+
+    50% {
+
+    }
+
+    to {
+        left: 100%;
+        background-color: rgb(216, 214, 214);
+    }
+}

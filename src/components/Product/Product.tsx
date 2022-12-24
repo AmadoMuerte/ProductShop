@@ -1,10 +1,19 @@
-import React from 'react';
 import './Product.css'
 
-function Product(props : {title: string, price: number, category: string, image: string}) {
+import {NavLink} from "react-router-dom";
+
+interface props {
+    title: string,
+    price: number,
+    category: string,
+    image: string,
+    id: number
+}
+
+function Product(props : props) {
 
     return (
-        <div className='product'>
+        <NavLink className='product' to={`/products/${props.id}`}>
             <div className='product__top'>
                 <h2 className="product__title">
                     {props.title}
@@ -15,7 +24,7 @@ function Product(props : {title: string, price: number, category: string, image:
                 < img src={props.image} alt="product" />
             </div>
             <p className='product__price'>{`${props.price} $` }</p>
-        </div>
+        </NavLink>
     );
 }
 

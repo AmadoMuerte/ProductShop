@@ -1,10 +1,6 @@
 import React from 'react';
 import './Header.css'
-import {Button} from "@mui/material";
-// @ts-ignore
-import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
-// @ts-ignore
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Header() {
     return (
         <div className='header'>
@@ -16,15 +12,12 @@ function Header() {
                     <ul className='navigation'>
                         <NavLink to={'/'}>
                             <li className='navigation__item'>
-                                <Button variant='contained' size='small'>Главная</Button>
+                                Главная
                             </li>
                         </NavLink>
                         <NavLink to={'/basket'}>
                             <li className='navigation__item'>
-                                <Button variant='contained' size='small'>
-                                    <p>Корзина</p>
-                                    <AddShoppingCartSharpIcon />
-                                </Button>
+                                Корзина
                             </li>
                         </NavLink>
                     </ul>
