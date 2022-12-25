@@ -20,7 +20,7 @@ function ProductList() {
 
     useEffect( () => {
         getProducts()
-    }, [])
+    })
 
 
     let productList: JSX.Element[]  = []

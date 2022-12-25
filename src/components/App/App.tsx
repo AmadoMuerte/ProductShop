@@ -7,14 +7,7 @@ import Footer from "../Footer/Footer";
 import Basket from "../Basket/Basket";
 import ProductCard from "../ProductCard/ProductCard";
 
-import {useSelector} from "react-redux";
-import {RootState} from "../../store/store";
-
 function App() {
-
-    const id = useSelector((state: RootState) => state.products.idProduct)
-
-
 
     return (
     <BrowserRouter>
