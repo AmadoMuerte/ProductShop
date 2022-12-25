@@ -3,6 +3,7 @@ import './ProductCard.css'
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import Skeleton from "../CssComponents/Skeleton/Skeleton";
+import Rating from "../Rating/Rating";
 
 interface Product {
     title: string,
@@ -10,6 +11,8 @@ interface Product {
     category: string,
     image: string,
     id: number,
+    description: string,
+    rating: {rate: number, count: number}
 }
 function ProductCard() {
     const [stateProduct, setProduct] = useState<Product>()
@@ -33,9 +36,18 @@ function ProductCard() {
         if (stateProduct) {
                 return (
                     <>
-                        <h2>{stateProduct.title}</h2>
+                        <div className='product__top'>
+                            <h2 className="product__title">
+                                {stateProduct.title}
+                            </h2>
+                            <p className='product__subtitle'>{stateProduct.category}</p>
+                        </div>
                         <div className="card__img">
                             <img src={stateProduct.image} alt="product"/>
+                        </div>
+                        <div className={'productCard__bottom'}>
+                            <p>{stateProduct.description}</p>
+                            <Rating rate={stateProduct.rating.rate} />
                         </div>
                     </>
                 )

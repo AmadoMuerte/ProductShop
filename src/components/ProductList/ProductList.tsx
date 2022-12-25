@@ -32,6 +32,7 @@ function ProductList() {
                 category: string,
                 image: string,
                 id: number,
+                rating: {rate: number, count: number}
             }
             productList = products.map(
                 (item: product) => {
@@ -42,6 +43,7 @@ function ProductList() {
                             category={item.category}
                             image={item.image}
                             id={item.id}
+                            rate={item.rating.rate}
                             key={item.id}
                         />)
             })

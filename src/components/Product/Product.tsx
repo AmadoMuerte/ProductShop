@@ -1,13 +1,15 @@
 import './Product.css'
 
 import {NavLink} from "react-router-dom";
+import Rating from "../Rating/Rating";
 
 interface props {
     title: string,
     price: number,
     category: string,
     image: string,
-    id: number
+    id: number,
+    rate: number
 }
 
 function Product(props : props) {
@@ -23,7 +25,10 @@ function Product(props : props) {
             <div className={'product__img'}>
                 < img src={props.image} alt="product" />
             </div>
-            <p className='product__price'>{`${props.price} $` }</p>
+            <div className={"product__bottom"}>
+                <p className='product__price'>{`${props.price} $` }</p>
+                <Rating rate={props.rate} />
+            </div>
         </NavLink>
     );
 }

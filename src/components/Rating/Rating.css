@@ -1,0 +1,14 @@
+.icon {
+    width: 30px;
+    margin-left: 5px;
+}
+
+.icon img {
+    width: 100%;
+}
+
+.rating {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
