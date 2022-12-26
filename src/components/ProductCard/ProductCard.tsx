@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './ProductCard.css'
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 import {useParams} from "react-router-dom";
 import Skeleton from "../CssComponents/Skeleton/Skeleton";
 import Rating from "../Rating/Rating";
@@ -20,7 +20,7 @@ function ProductCard() {
 
     const getProduct =  async () => {
         await axios.get(`https://fakestoreapi.com/products/${prodId}`)
-            .then ((response: any) => {
+            .then ((response: AxiosResponse) => {
                 setProduct(response.data)
             })
             .catch(err => {

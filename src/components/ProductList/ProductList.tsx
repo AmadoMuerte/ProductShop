@@ -4,6 +4,15 @@ import axios from "axios";
 import './ProductList.css'
 import Skeleton from "../CssComponents/Skeleton/Skeleton";
 
+interface product {
+    title: string,
+    price: number,
+    category: string,
+    image: string,
+    id: number,
+    rating: {rate: number, count: number}
+}
+
 function ProductList() {
 
       let [products, setProducts] = useState([])
@@ -26,14 +35,7 @@ function ProductList() {
     let productList: JSX.Element[]  = []
     let CreateProductList = () => {
         if (products.length > 1) {
-            interface product {
-                title: string,
-                price: number,
-                category: string,
-                image: string,
-                id: number,
-                rating: {rate: number, count: number}
-            }
+
             productList = products.map(
                 (item: product) => {
                     return (
@@ -55,7 +57,6 @@ function ProductList() {
     }
 
     CreateProductList()
-
 
     return (
         <div className='product-list'>

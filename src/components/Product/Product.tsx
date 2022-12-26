@@ -2,6 +2,9 @@ import './Product.css'
 
 import {NavLink} from "react-router-dom";
 import Rating from "../Rating/Rating";
+import ProductBtn from "../ProductBtn/ProductBtn";
+import {useDispatch} from "react-redux";
+import {addProduct} from "../../slices/basketSlice";
 
 interface props {
     title: string,
@@ -14,9 +17,16 @@ interface props {
 
 function Product(props : props) {
 
+    const dispatch = useDispatch()
+
     let title: string[] = props.title.split('')
     if (title.length >= 35) {
         title.splice(35, title.length - 35, '...')
+    }
+
+    let addToBasket = () => {
+        dispatch(addProduct(props.id))
+        return undefined
     }
 
     return (
@@ -30,11 +40,8 @@ function Product(props : props) {
             <NavLink to={`/products/${props.id}`} className={'product__img'}>
                 < img src={props.image} alt="product" />
             </NavLink>
-
             <div className={"product__bottom"}>
-                <button className="btn-basket">
-                    buy
-                </button>
+                <ProductBtn title={'Buy'} click={addToBasket}/>
                 <p className='product__price'>{`${props.price} $` }</p>
                 <Rating rate={props.rate} />
             </div>
