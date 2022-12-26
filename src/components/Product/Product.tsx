@@ -14,11 +14,16 @@ interface props {
 
 function Product(props : props) {
 
+    let title: string[] = props.title.split('')
+    if (title.length >= 35) {
+        title.splice(35, title.length - 35, '...')
+    }
+
     return (
-        <NavLink className='product' to={`/products/${props.id}`}>
+        <div className={'product'}>
             <div className='product__top'>
                 <h2 className="product__title">
-                    {props.title}
+                    {title}
                 </h2>
                 <p className='product__subtitle'>{props.category}</p>
             </div>
@@ -26,10 +31,13 @@ function Product(props : props) {
                 < img src={props.image} alt="product" />
             </div>
             <div className={"product__bottom"}>
+                <button className="btn-basket">
+                    buy
+                </button>
                 <p className='product__price'>{`${props.price} $` }</p>
                 <Rating rate={props.rate} />
             </div>
-        </NavLink>
+        </div>
     );
 }
 

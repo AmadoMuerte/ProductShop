@@ -12,12 +12,12 @@ function Header() {
                     <ul className='navigation'>
                         <NavLink to={'/'}>
                             <li className='navigation__item'>
-                                Главная
+                                main
                             </li>
                         </NavLink>
                         <NavLink to={'/basket'}>
                             <li className='navigation__item'>
-                                Корзина
+                                Basket
                             </li>
                         </NavLink>
                     </ul>
