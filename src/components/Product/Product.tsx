@@ -27,9 +27,10 @@ function Product(props : props) {
                 </h2>
                 <p className='product__subtitle'>{props.category}</p>
             </div>
-            <div className={'product__img'}>
+            <NavLink to={`/products/${props.id}`} className={'product__img'}>
                 < img src={props.image} alt="product" />
-            </div>
+            </NavLink>
+
             <div className={"product__bottom"}>
                 <button className="btn-basket">
                     buy
