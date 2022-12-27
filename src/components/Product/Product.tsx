@@ -6,16 +6,9 @@ import ProductBtn from "../ProductBtn/ProductBtn";
 import {useDispatch} from "react-redux";
 import {addProduct} from "../../slices/basketSlice";
 
-interface props {
-    title: string,
-    price: number,
-    category: string,
-    image: string,
-    id: number,
-    rate: number
-}
+import {IProduct} from "../../interfaces";
 
-function Product(props : props) {
+function Product(props : IProduct) {
 
     const dispatch = useDispatch()
 
@@ -43,7 +36,7 @@ function Product(props : props) {
             <div className={"product__bottom"}>
                 <ProductBtn title={'Buy'} click={addToBasket}/>
                 <p className='product__price'>{`${props.price} $` }</p>
-                <Rating rate={props.rate} />
+                <Rating rate={props.rating.rate} />
             </div>
         </div>
     );

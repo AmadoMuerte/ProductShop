@@ -1,25 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import Product from "../Product/Product";
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
+
 import './ProductList.css'
+import Product from "../Product/Product";
 import Skeleton from "../CssComponents/Skeleton/Skeleton";
 
-interface product {
-    title: string,
-    price: number,
-    category: string,
-    image: string,
-    id: number,
-    rating: {rate: number, count: number}
-}
+import {  IProduct } from '../../interfaces'
 
 function ProductList() {
 
-      let [products, setProducts] = useState([])
+      let [products, setProducts] = useState<IProduct[]>([])
 
-    const getProducts =  async () => {
+     const getAllProduct =  async () => {
         await axios.get('https://fakestoreapi.com/products')
-            .then ((response: any) => {
+            .then ((response: AxiosResponse) => {
                 setProducts(response.data)
             })
             .catch(err => {
@@ -27,17 +21,18 @@ function ProductList() {
             })
     }
 
-    useEffect( () => {
-        getProducts()
+    useEffect(() => {
+        if (products.length === 0) {
+            getAllProduct()
+        }
     })
 
-
     let productList: JSX.Element[]  = []
+
     let CreateProductList = () => {
         if (products.length > 1) {
-
             productList = products.map(
-                (item: product) => {
+                (item: IProduct) => {
                     return (
                         <Product
                             title={item.title}
@@ -45,7 +40,7 @@ function ProductList() {
                             category={item.category}
                             image={item.image}
                             id={item.id}
-                            rate={item.rating.rate}
+                            rating={item.rating}
                             key={item.id}
                         />)
             })

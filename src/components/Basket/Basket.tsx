@@ -34,7 +34,7 @@ function Basket() {
     }
 
     useEffect(() => {
-        if (!basket) {
+        if (idProducts) {
             getProduct()
         }
     })

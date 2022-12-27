@@ -5,17 +5,10 @@ import {useParams} from "react-router-dom";
 import Skeleton from "../CssComponents/Skeleton/Skeleton";
 import Rating from "../Rating/Rating";
 
-interface Product {
-    title: string,
-    price: number,
-    category: string,
-    image: string,
-    id: number,
-    description: string,
-    rating: {rate: number, count: number}
-}
+import {IFullProduct} from "../../interfaces";
+
 function ProductCard() {
-    const [stateProduct, setProduct] = useState<Product>()
+    const [stateProduct, setProduct] = useState<IFullProduct>()
     const prodId = useParams().id;
 
     const getProduct =  async () => {
