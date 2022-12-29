@@ -26,6 +26,7 @@ function Basket() {
     }
 
     useEffect(() => {
+
         for(let i = 0; i < idProducts.length; i++) {
             getProduct(idProducts[i])
         }

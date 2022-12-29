@@ -1,16 +1,13 @@
 import React from 'react';
-import { IProduct } from "../../../interfaces";
+import {BasketProps} from "../../../interfaces";
 
-interface Props {
-    product: IProduct,
-    deleteFunc(id: number): void
-}
-
-function BasketProductCard(props: Props) {
+function BasketProductCard(props: BasketProps) {
 
     return (
-        <div className="basket__item">
-            {props.product.title}
+        <div className="basketProductCard">
+            <h2 className={'basketProductCard__title'}>
+                {props.product.title}
+            </h2>
             <button onClick={() => props.deleteFunc(props.product.id)}>delete</button>
         </div>
     );

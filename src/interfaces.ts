@@ -16,3 +16,8 @@ export interface IFullProduct {
     description: string,
     rating: {rate: number, count: number}
 }
+
+export interface BasketProps {
+    product: IProduct,
+    deleteFunc(id: number): void
+}

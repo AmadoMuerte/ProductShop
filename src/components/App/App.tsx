@@ -6,6 +6,8 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Basket from "../Basket/Basket";
 import ProductCard from "../ProductCard/ProductCard";
+import React from "react";
+import MainPage from "../MainPage/MainPage";
 
 function App() {
 
@@ -17,15 +19,11 @@ function App() {
                 <Routes>
                     <Route
                         path='/'
+                        element={<MainPage />}
+                    />
+                    <Route
+                        path='*'
                         element={<Main/>}
-                    />
-                    <Route
-                        path = {`/products/:id`}
-                        element={<ProductCard />}
-                    />
-                    <Route
-                        path='/basket'
-                        element={<Basket/>}
                     />
                 </Routes>
             </div>

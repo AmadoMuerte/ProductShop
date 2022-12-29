@@ -15,6 +15,11 @@ function Header() {
                                 main
                             </li>
                         </NavLink>
+                        <NavLink to={'/products'}>
+                            <li className='navigation__item'>
+                                Products
+                            </li>
+                        </NavLink>
                         <NavLink to={'/basket'}>
                             <li className='navigation__item'>
                                 Basket
