@@ -5,6 +5,7 @@ import axios, {AxiosResponse} from "axios";
 import {IFullProduct} from "../../interfaces";
 import {useDispatch} from "react-redux";
 import { deleteProduct } from "../../slices/basketSlice";
+import BasketProductCard from "./BasketProductCard/BasketProductCard";
 
 function Basket() {
     const idProducts = useAppSelector((state) => state.basket.idProducts)
@@ -36,18 +37,13 @@ function Basket() {
         setBasket(newProductState)
     }
 
-
     const createBasketItems = () => {
         return basket.map((item: IFullProduct) => {
             return (
-                <div className="basket__item" key={item.id}>
-                    {item.title}
-                    <button onClick={() => deleteFunc(item.id)}>delete</button>
-                </div>
+                <BasketProductCard product={item} deleteFunc={deleteFunc} key={item.id}/>
             )
         })
     }
-
     let productList: JSX.Element[]  = createBasketItems()
 
     return (
