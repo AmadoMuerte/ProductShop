@@ -3,9 +3,12 @@ import './Basket.css'
 import {useAppSelector} from "../App/hooks";
 import axios, {AxiosResponse} from "axios";
 import {IFullProduct} from "../../interfaces";
+import {useDispatch} from "react-redux";
+import { deleteProduct } from "../../slices/basketSlice";
 
 function Basket() {
     const idProducts = useAppSelector((state) => state.basket.idProducts)
+    const dispatch = useDispatch()
 
     let [basket, setBasket] = useState<IFullProduct[]>([])
     const getProduct =  async (id: number) => {
@@ -21,25 +24,31 @@ function Basket() {
             }
     }
 
-        getProduct(5)
+    useEffect(() => {
+        for(let i = 0; i < idProducts.length; i++) {
+            getProduct(idProducts[i])
+        }
+    })
+
+    const deleteFunc = (id: number) => {
+        dispatch(deleteProduct(id))
+        let newProductState = basket.filter(product => product.id !== id)
+        setBasket(newProductState)
+    }
 
 
     const createBasketItems = () => {
-        if (basket.length > 1) {
-            return basket.map((item: IFullProduct) => {
-                return (
-                    <div className="basket__item" key={item.id}>
-                        {item.title}
-                    </div>
-                )
-            })
-        } else {
-            return []
-        }
+        return basket.map((item: IFullProduct) => {
+            return (
+                <div className="basket__item" key={item.id}>
+                    {item.title}
+                    <button onClick={() => deleteFunc(item.id)}>delete</button>
+                </div>
+            )
+        })
     }
 
     let productList: JSX.Element[]  = createBasketItems()
-
 
     return (
         <div className='basket'>

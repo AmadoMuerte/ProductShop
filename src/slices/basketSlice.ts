@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import type {PayloadAction} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
 export interface CounterState {
     idProducts: number[]
@@ -15,9 +15,14 @@ export const basketSlice = createSlice({
     reducers: {
         addProduct: (state, action: PayloadAction<number>) => {
             state.idProducts.push(action.payload)
+        },
+        deleteProduct: (state, action: PayloadAction<number>) => {
+            state.idProducts = state.idProducts.filter(id => {
+                return id !== action.payload
+            })
         }
     },
 })
 
-export const {  addProduct } = basketSlice.actions
+export const {  addProduct, deleteProduct } = basketSlice.actions
 export default basketSlice.reducer
