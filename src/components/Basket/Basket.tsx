@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './Basket.css'
-import {useAppSelector} from "../App/hooks";
+
 import axios, {AxiosResponse} from "axios";
+
 import {IFullProduct} from "../../interfaces";
+
+import {useAppSelector} from "../App/hooks";
 import {useDispatch} from "react-redux";
 import { deleteProduct } from "../../slices/basketSlice";
 import BasketProductCard from "./BasketProductCard/BasketProductCard";
@@ -39,21 +42,20 @@ function Basket() {
     }
 
     const createBasketItems = () => {
-        return basket.map((item: IFullProduct) => {
-            return (
-                <BasketProductCard product={item} deleteFunc={deleteFunc} key={item.id}/>
-            )
-        })
+        if (basket.length > 1) {
+            return basket.map((item: IFullProduct) => {
+                return (
+                    <BasketProductCard product={item} deleteFunc={deleteFunc} key={item.id}/>
+                )
+            })
+        } else {
+            return [<div className='basket__emptyTitle' key={303030}>your basket is empty.</div>]
+        }
     }
     let productList: JSX.Element[]  = createBasketItems()
-
     return (
         <div className='basket'>
-            <div className="container">
-                <div className="basket__inner">
-                    {productList}
-                </div>
-            </div>
+            {productList}
         </div>
     );
 }

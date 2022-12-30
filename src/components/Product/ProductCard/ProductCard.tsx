@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import './ProductCard.css'
 import axios, {AxiosResponse} from "axios";
 import {useParams} from "react-router-dom";
-import Skeleton from "../CssComponents/Skeleton/Skeleton";
-import Rating from "../Rating/Rating";
+import Skeleton from "../../CssComponents/Skeleton/Skeleton";
+import Rating from "../../Rating/Rating";
 
-import {IFullProduct} from "../../interfaces";
+import {IFullProduct} from "../../../interfaces";
 
 function ProductCard() {
     const [stateProduct, setProduct] = useState<IFullProduct>()

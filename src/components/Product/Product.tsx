@@ -2,7 +2,7 @@ import './Product.css'
 
 import {NavLink} from "react-router-dom";
 import Rating from "../Rating/Rating";
-import ProductBtn from "../ProductBtn/ProductBtn";
+import ProductBtn from "./ProductBtn/ProductBtn";
 import {useDispatch} from "react-redux";
 import {addProduct} from "../../slices/basketSlice";
 

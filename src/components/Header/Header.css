@@ -16,8 +16,6 @@
 }
 
 .navigation__item {
-    display: flex;
-    align-items: center;
     margin-right: 10px;
     background-color: rgba(146, 237, 223, 0.48);
     padding: 5px 10px;

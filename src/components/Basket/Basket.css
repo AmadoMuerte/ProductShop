@@ -1,13 +1,16 @@
 .basket {
-    margin: 0 auto;
-    max-width: 1000px;
-}
-.basket__inner {
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #fff;
     border-radius: 10px;
-    height: 600px;
+    min-height: 600px;
+    max-width: 1000px;
+}
+
+.basket__emptyTitle {
+    width: 1000px;
+    text-align: center;
+    font-size: 20px;
 }

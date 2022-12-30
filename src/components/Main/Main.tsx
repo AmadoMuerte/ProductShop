@@ -2,12 +2,8 @@ import React from 'react';
 import './Main.css'
 import ProductList from "../ProductList/ProductList";
 import Basket from "../Basket/Basket";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ProductCard from "../ProductCard/ProductCard";
-
-
-let totalPages: number
-
+import { Route, Routes } from "react-router-dom";
+import ProductCard from "../Product/ProductCard/ProductCard";
 
 function Main() {
     return (
