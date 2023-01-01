@@ -1,28 +1,29 @@
 import type {PayloadAction} from '@reduxjs/toolkit'
 import {createSlice} from '@reduxjs/toolkit'
+import {IProduct} from "../interfaces";
 
 export interface CounterState {
-    idProducts: number[]
+    basketProducts: IProduct[]
 }
 
 const initialState: CounterState = {
-    idProducts: [],
+    basketProducts: [],
 }
 
 export const basketSlice = createSlice({
     name: 'basket',
     initialState,
     reducers: {
-        addProduct: (state, action: PayloadAction<number>) => {
-            state.idProducts = state.idProducts.filter( id => {
-                return id !== action.payload
+        addProduct: (state, action: PayloadAction<IProduct>) => {
+            state.basketProducts = state.basketProducts.filter(product => {
+                return product.id !== action.payload.id
             })
-            state.idProducts.push(action.payload)
+            state.basketProducts.push(action.payload)
         },
         
-        deleteProduct: (state, action: PayloadAction<number>) => {
-            state.idProducts = state.idProducts.filter(id => {
-                return id !== action.payload
+        deleteProduct: (state, action: PayloadAction<Number>) => {
+            state.basketProducts = state.basketProducts.filter(product => {
+                return product.id !== action.payload
             })
         }
     },

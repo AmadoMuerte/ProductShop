@@ -17,8 +17,8 @@ function Product(props : IProduct) {
         title.splice(35, title.length - 35, '...')
     }
 
-    let addToBasket = () => {
-        dispatch(addProduct(props.id))
+    let addInBasket = () => {
+        dispatch(addProduct(props))
         return undefined
     }
 
@@ -34,7 +34,7 @@ function Product(props : IProduct) {
                 < img src={props.image} alt="product" />
             </NavLink>
             <div className={"product__bottom"}>
-                <ProductBtn title={'Buy'} click={addToBasket}/>
+                <ProductBtn title={'Buy'} click={addInBasket}/>
                 <p className='product__price'>{`${props.price} $` }</p>
                 <Rating rate={props.rating.rate} />
             </div>
