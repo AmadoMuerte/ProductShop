@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux";
 import { deleteProduct } from "../../slices/basketSlice";
 import BasketProductCard from "./BasketProductCard/BasketProductCard";
 import {IProduct} from "../../interfaces";
+import {useEffect} from "react";
 
 function Basket() {
 
@@ -13,6 +14,15 @@ function Basket() {
         (state) => state.basket.basketProducts)
 
     const dispatch = useDispatch()
+
+    let setProductsToStorage = () => {
+        let products = JSON.stringify(basketProducts)
+        localStorage.setItem('basketProducts', products )
+    }
+
+    useEffect(() => {
+        setProductsToStorage()
+    })
 
     const deleteFunc = (id: number) => {
         dispatch(deleteProduct(id))

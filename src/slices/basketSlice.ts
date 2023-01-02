@@ -6,8 +6,16 @@ export interface CounterState {
     basketProducts: IProduct[]
 }
 
+let storageBasketProducts = []
+
+let basketProducts = localStorage.getItem('basketProducts')
+
+if (basketProducts) {
+    storageBasketProducts = JSON.parse(basketProducts)
+}
+
 const initialState: CounterState = {
-    basketProducts: [],
+    basketProducts: storageBasketProducts
 }
 
 export const basketSlice = createSlice({
