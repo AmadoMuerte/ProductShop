@@ -27,7 +27,7 @@ function ProductList() {
     let productList: JSX.Element[]  = []
 
     let CreateProductList = () => {
-        if (products.length > 1) {
+        if (products.length > 0) {
             productList = products.map(
                 (product: IProduct) => {
                     return (

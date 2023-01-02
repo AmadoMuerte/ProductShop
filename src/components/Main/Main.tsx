@@ -13,7 +13,7 @@ function Main() {
                 <div className="main__inner">
                     <Routes>
                         <Route
-                            path='/products/*'
+                            path='/'
                             element={<ProductList />}
                         />
                         <Route
@@ -21,7 +21,7 @@ function Main() {
                             element={<Basket/>}
                         />
                         <Route
-                            path = {`products/:id`}
+                            path = {`/:id`}
                             element={<ProductCard />}
                         />
                     </Routes>
