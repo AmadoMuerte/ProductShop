@@ -7,6 +7,24 @@
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: black;
+    font-size: 18px;
+    background-color: #f8f8f8;
+    box-shadow: 6px 3px  15px 2px #e0d8d8;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    color: #ffffff;
+    background-color: #c5c2c2;
+    box-shadow: 6px 3px  15px 2px #dcdcdc;
 }
 
 .navigation {

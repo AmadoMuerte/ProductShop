@@ -1,0 +1,22 @@
+.searchPanel {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background-color: rgba(146, 237, 223, 0.48);
+}
+
+.searchPanel__item {
+    font-size: 15px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    width: 200px;
+    border: none;
+}
+
+.searchPanel__button {
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 10px;
+    font-size: 15px;
+    background-color: #fff;
+}

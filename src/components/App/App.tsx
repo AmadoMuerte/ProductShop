@@ -6,9 +6,6 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 
-import MainPage from "../MainPage/MainPage";
-import ProductList from "../ProductList/ProductList";
-
 function App() {
 
     return (
