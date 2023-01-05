@@ -1,8 +1,7 @@
 
 import './Basket.css'
 
-import {useAppSelector} from "../App/hooks";
-import {useDispatch} from "react-redux";
+import {useAppDispatch, useAppSelector} from "../App/hooks";
 import { deleteProduct } from "../../slices/basketSlice";
 import BasketProductCard from "./BasketProductCard/BasketProductCard";
 import {IProduct} from "../../interfaces";
@@ -13,7 +12,7 @@ function Basket() {
     const basketProducts = useAppSelector(
         (state) => state.basket.basketProducts)
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     let setProductsToStorage = () => {
         let products = JSON.stringify(basketProducts)

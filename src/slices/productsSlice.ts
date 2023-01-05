@@ -1,23 +1,39 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import {IFullProduct} from "../interfaces";
+import {stat} from "fs";
 
 export interface CounterState {
-    idProduct: number
+    productsData: IFullProduct[]
+    searchingData: IFullProduct[]
+    searching: boolean
 }
 
 const initialState: CounterState = {
-    idProduct: 0,
+    productsData: [],
+    searchingData: [],
+    searching: false
 }
 
 export const productSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {
-        switchId: (state, action: PayloadAction<number>) => {
-            state.idProduct = action.payload
+        addProducts: (state, action: PayloadAction<IFullProduct[]>) => {
+            state.productsData = action.payload
+        },
+        searchProduct: (state, action: PayloadAction<string>) => {
+            state.searchingData = state.productsData.filter( product => {
+                let productString = product.title.toLowerCase()
+                if (productString.indexOf(action.payload) !== -1) {
+                    return product
+                }
+            })
+            state.searching = !!action.payload;
+
         }
     },
 })
 
-export const {  switchId } = productSlice.actions
+export const {  addProducts, searchProduct } = productSlice.actions
 export default productSlice.reducer
