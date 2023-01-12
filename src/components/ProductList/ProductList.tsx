@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import axios, {AxiosResponse} from "axios";
 
 import './ProductList.css'
@@ -8,6 +8,7 @@ import { IFullProduct } from '../../interfaces'
 
 import {useAppDispatch, useAppSelector} from "../App/hooks";
 import { addProducts } from "../../slices/productsSlice";
+import Filters from "../../Filters/Filters";
 
 function ProductList() {
     const dispatch = useAppDispatch()
@@ -64,13 +65,15 @@ function ProductList() {
             }
         }
     }
-
     updateProductList()
 
     return (
-        <div className='product-list'>
-            {productList}
-        </div>
+        <>
+            <Filters />
+            <div className='product-list'>
+                {productList}
+            </div>
+        </>
     )
 }
 

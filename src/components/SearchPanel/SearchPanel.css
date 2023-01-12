@@ -1,15 +1,21 @@
 .searchPanel {
     padding: 8px 10px;
     border-radius: 10px;
-    background-color: rgba(146, 237, 223, 0.48);
+    margin-bottom: 10px;
 }
 
 .searchPanel__item {
-    font-size: 15px;
+    font-size: 18px;
     padding: 3px 10px;
-    border-radius: 2px;
+    border-radius: 10px;
     width: 200px;
     border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+.searchPanel__item:focus {
+
+    background-color: rgba(255, 255, 255, 0.53);
 }
 
 .searchPanel__button {
@@ -17,6 +23,13 @@
     border-radius: 10px;
     border: none;
     margin-left: 10px;
-    font-size: 15px;
+    font-size: 18px;
     background-color: #fff;
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.21);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.searchPanel__button:hover {
+    background-color: rgba(255, 255, 255, 0.66);
 }

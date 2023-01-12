@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import { NavLink } from "react-router-dom";
-import SearchPanel from "../SearchPanel/SearchPanel";
+
 function Header() {
     return (
         <div className='header'>
@@ -10,7 +10,6 @@ function Header() {
                     <div className="logo">
                         Amado Shop
                     </div>
-                    <SearchPanel />
                     <ul className='navigation'>
                         <NavLink to={'/'}>
                             <li className='navigation__item'>
