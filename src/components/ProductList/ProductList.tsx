@@ -8,7 +8,7 @@ import { IFullProduct } from '../../interfaces'
 
 import {useAppDispatch, useAppSelector} from "../App/hooks";
 import { addProducts } from "../../slices/productsSlice";
-import Filters from "../../Filters/Filters";
+import Filters from "../Filters/Filters";
 
 function ProductList() {
     const dispatch = useAppDispatch()

@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchPanel from "../components/SearchPanel/SearchPanel";
+import SearchPanel from "../SearchPanel/SearchPanel";
 
 function Filters() {
     return (
         <div>
             <SearchPanel />
-            <form action=""></form>
+            <form action="src/components/Filters"></form>
         </div>
     );
 }
