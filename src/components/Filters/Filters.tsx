@@ -1,11 +1,18 @@
 import React from 'react';
-import SearchPanel from "../SearchPanel/SearchPanel";
+//import SearchPanel from "../SearchPanel/SearchPanel";
+import './Filters.css'
+import SearchPanel from "./SearchPanel/SearchPanel";
+import BottomFilters from "./BottomFilters/BottomFilters";
+import FilterCounting from "./FilterCounting/FilterCounting";
 
 function Filters() {
     return (
-        <div>
-            <SearchPanel />
-            <form action="src/components/Filters"></form>
+        <div className='filters'>
+            <div className='filter'>
+                <SearchPanel />
+                <BottomFilters />
+            </div>
+            <FilterCounting />
         </div>
     );
 }
