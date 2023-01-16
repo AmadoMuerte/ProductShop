@@ -1,5 +1,4 @@
 import React from 'react';
-//import SearchPanel from "../SearchPanel/SearchPanel";
 import './Filters.css'
 import SearchPanel from "./SearchPanel/SearchPanel";
 import BottomFilters from "./BottomFilters/BottomFilters";
