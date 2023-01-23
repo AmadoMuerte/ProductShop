@@ -24,7 +24,7 @@ function BasketProductCard(props: BasketProps) {
                 </button>
             </div>
             <div className='basketProductCard__bottom'>
-                <p>{props.product.price}</p>
+                <p>{props.product.price + '$'}</p>
                 <button>buy</button>
             </div>
 

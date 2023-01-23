@@ -67,5 +67,13 @@
 
 .basketProductCard__image img {
     width: 50%;
+}
 
+.basketProductCard__bottom button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #5d6262;
+    background-color: #99eade;
 }
