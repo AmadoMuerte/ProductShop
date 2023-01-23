@@ -11,7 +11,7 @@ function Filters() {
                 <SearchPanel />
                 <BottomFilters />
             </div>
-            <FilterCounting />
+            {/*<FilterCounting />*/}
         </div>
     );
 }
