@@ -68,12 +68,12 @@ function ProductList() {
     updateProductList()
 
     return (
-        <>
+        <div className='mainList'>
             <Filters />
             <div className='product-list'>
                 {productList}
             </div>
-        </>
+        </div>
     )
 }
 

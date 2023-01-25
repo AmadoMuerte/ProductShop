@@ -1,11 +1,9 @@
 .filters {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    margin-right: 30px;
+    font-size: 18px;
 }
 
 .filter {
-    padding: 5px;
+
 }
 

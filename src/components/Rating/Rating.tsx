@@ -3,8 +3,6 @@ import './Rating.css'
 
 // @ts-ignore
 import   heart from '../../icons/heart.svg'
-// @ts-ignore
-import   heartMini from '../../icons/heartMini.svg'
 
 function Rating(props: {rate: number}) {
 

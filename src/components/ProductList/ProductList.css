@@ -1,6 +1,11 @@
+.mainList {
+    display: flex;
+    justify-content: space-between;
+}
+
 .product-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 20px;
 }
+
