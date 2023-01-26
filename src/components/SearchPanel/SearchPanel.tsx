@@ -22,7 +22,7 @@ const SearchPanel = () => {
             <input
                 type="text"
                 className="searchPanel__item"
-                placeholder='Type product name here'
+                placeholder='Type product name'
                 value = {searchText}
                 onChange= {e => setSearchText(e.target.value)}
             />
@@ -33,4 +33,4 @@ const SearchPanel = () => {
     )
 };
 
-//export default SearchPanel;
+export default SearchPanel;

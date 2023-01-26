@@ -1,0 +1,25 @@
+.priceFilter {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.61);
+    padding: 10px 0;
+    border-radius: 15px;
+    margin: 0 10px 10px;
+}
+
+.priceFilter__items {
+    display: flex;
+    margin-right: -10px;
+}
+
+.priceFilter input {
+    padding: 5px 8px;
+    margin-top: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+    margin-right: 10px;
+}

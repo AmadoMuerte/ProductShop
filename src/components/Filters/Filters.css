@@ -1,9 +1,25 @@
 .filters {
-    margin-right: 30px;
-    font-size: 18px;
+   height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.38);
+    border-radius: 20px;
+    padding: 5px 5px 20px;
 }
 
-.filter {
+.filters__button {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
 
+.filters__button-item {
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 8px 20px;
+    background-color: rgba(146, 237, 223, 0.48);
 }
 
