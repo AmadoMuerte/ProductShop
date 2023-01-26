@@ -1,11 +1,10 @@
 .mainList {
-    display: flex;
-    justify-content: space-between;
+
 }
 
 .product-list {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 

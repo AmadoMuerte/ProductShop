@@ -2,7 +2,7 @@ import React from 'react';
 import './Rating.css'
 
 // @ts-ignore
-import   heart from '../../icons/heart.svg'
+import   heart from '../../icons/star.svg'
 
 function Rating(props: {rate: number}) {
 
@@ -11,7 +11,7 @@ function Rating(props: {rate: number}) {
         for(let i = 0; i < Math.floor(props.rate); i++) {
             rating.push(
                 <div className={'icon'} key={i}>
-                    <img src={heart} alt="heart" />
+                    <img src={heart} alt="star" />
                 </div>
             )
         }
