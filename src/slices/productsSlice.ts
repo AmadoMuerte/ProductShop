@@ -32,7 +32,7 @@ export const productSlice = createSlice({
 
         },
         searchByPrice: (state, action: PayloadAction<{startPrice: number, lastPrice: number}>) => {
-            state.searchingData = state.productsData.filter( product => {
+            state.searchingData = state.searchingData.filter( product => {
                 if (product.price >= action.payload.startPrice &&
                     product.price < action.payload.lastPrice) {
                     return product
