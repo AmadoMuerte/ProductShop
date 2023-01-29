@@ -1,19 +1,17 @@
-import React, {useState} from 'react';
 import './CategorySelect.css'
 import {useAppDispatch, useAppSelector} from "../../App/hooks";
-import {searchByCategory} from "../../../slices/productsSlice";
+import {Dispatch, SetStateAction} from "react";
 
-function CategorySelect() {
+interface IProps {
+    category: string
+    setCategory: Dispatch<SetStateAction<string>>
+}
+
+function CategorySelect(props: IProps) {
     const dispatch = useAppDispatch()
     const productsData = useAppSelector(state => state.productList.productsData)
-    const [value, setValue] = useState('none')
 
     let options: JSX.Element[] = []
-
-    const handleChange = (name: string) => {
-        setValue(name)
-        dispatch(searchByCategory(value))
-    }
 
     const createOptions = () => {
         let allCategory:string[] = []
@@ -30,18 +28,22 @@ function CategorySelect() {
             }
         }
     }
+
     createOptions()
 
+    let handleChange = (name: string) => {
+        props.setCategory(name)
+    }
 
     return (
         <div className='categorySelect'>
             <p>Category</p>
             <select
                 className='categorySelect__select'
-                value={value}
+                value={props.category}
                 onChange={(e) => handleChange(e.target.value)}
             >
-                <option defaultValue={'none'}>none</option>
+                <option defaultValue={''}>none</option>
                 {options}
             </select>
         </div>

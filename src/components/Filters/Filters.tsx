@@ -1,22 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Filters.css'
 import CategorySelect from "./CategorySelect/CategorySelect";
 import PriceFilter from "./PriceFilter/PriceFilter";
 import SearchPanel from "./SearchPanel/SearchPanel";
 import {useAppDispatch} from "../App/hooks";
+import {searchByCategory, searchByName} from "../../slices/productsSlice";
 
 function Filters() {
+    const [category, setCategory] = useState<string>('')
+    const [productName, setProductName] = useState<string>('')
     const dispatch = useAppDispatch()
-    const startProductFilter = () => {
-
+    const startSearchProducts = () => {
+        dispatch(searchByCategory(category))
+        if (productName !== '') {
+            dispatch(searchByName(productName.toLowerCase()))
+        }
     }
+
     return (
         <div className='filters'>
-                <SearchPanel />
-                <CategorySelect />
+                <SearchPanel productName={productName} setProductName={setProductName}/>
+                <CategorySelect category={category} setCategory={setCategory}/>
                 <PriceFilter />
                 <div className='filters__button'>
-                    <button className='filters__button-item' onClick={startProductFilter}>
+                    <button className='filters__button-item' onClick={startSearchProducts}>
                         Search
                     </button>
                 </div>

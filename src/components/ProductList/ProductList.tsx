@@ -50,13 +50,7 @@ function ProductList() {
 
     const updateProductList = () => {
         if (!searching) {
-            if (productData.length === 0) {
-                for (let i = 0; i < 6; i++) {
-                    productList.push(<Skeleton width={'380px'} height={'500px'} key={i}/>)
-                }
-            } else {
                 createProductList(productData)
-            }
         } else {
             if (searchingData.length === 0) {
                 productList.push( <div key={'empty-list'}>Empty</div> )
