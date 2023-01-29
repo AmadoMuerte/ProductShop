@@ -17,7 +17,7 @@ export interface IFullProduct {
     rating: {rate: number, count: number}
 }
 
-export interface BasketProps {
+export interface IBasketProps {
     product: IProduct,
     deleteFunc(id: number): void
 }

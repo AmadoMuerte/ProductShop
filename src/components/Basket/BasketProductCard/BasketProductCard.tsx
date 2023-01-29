@@ -1,11 +1,11 @@
 import React from 'react';
 import './BasketProductCard.css'
 
-import {BasketProps} from "../../../interfaces";
+import {IBasketProps} from "../../../interfaces";
 import {NavLink} from "react-router-dom";
 
 
-function BasketProductCard(props: BasketProps) {
+function BasketProductCard(props: IBasketProps) {
 
     return (
         <div className="basketProductCard">

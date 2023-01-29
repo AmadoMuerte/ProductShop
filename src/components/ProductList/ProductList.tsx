@@ -19,7 +19,7 @@ function ProductList() {
     let productList: JSX.Element[] = []
 
     useEffect(() => {
-        getAllProduct()
+        getAllProduct().then(r => r)
     })
 
     const getAllProduct =  async () => {

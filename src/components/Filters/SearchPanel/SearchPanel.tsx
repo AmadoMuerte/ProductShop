@@ -1,7 +1,7 @@
 
 import './SearchPanel.css'
-import {useAppDispatch, useAppSelector} from "../App/hooks";
-import {searchProduct} from "../../slices/productsSlice";
+import {useAppDispatch} from "../../App/hooks";
+import {searchByName} from "../../../slices/productsSlice";
 import {useState} from "react";
 
 const SearchPanel = () => {
@@ -11,9 +11,9 @@ const SearchPanel = () => {
     const changeProductInState = () => {
         setSearchText(searchText)
         if (searchText) {
-            dispatch(searchProduct(searchText.toLowerCase()))
+            dispatch(searchByName(searchText.toLowerCase()))
         } else {
-            dispatch(searchProduct(''))
+            dispatch(searchByName(''))
         }
     }
 
