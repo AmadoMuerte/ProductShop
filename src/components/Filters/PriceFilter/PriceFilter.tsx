@@ -10,6 +10,16 @@ interface IProps {
 
 function PriceFilter(props: IProps) {
 
+    let setPriceToState = (event: React.ChangeEvent<HTMLInputElement>, functionName: String) => {
+        if (!isNaN(Number(event.target.value))) {
+            if (functionName === 'startPrice') {
+                props.setStartPrice(Number(event.target.value))
+            } else if (functionName === 'lastPrice') {
+                props.setLastPrice(Number(event.target.value))
+            }
+        }
+    }
+
     return (
         <div className='priceFilter'>
             <p>Price</p>
@@ -18,13 +28,13 @@ function PriceFilter(props: IProps) {
                     type='text'
                     placeholder='0$'
                     value={props.startPrice}
-                    onChange={(e) => props.setStartPrice(Number(e.target.value))}
+                    onChange={(event) => setPriceToState(event, "startPrice")}
                 />
                 <input
                     type='text'
                     placeholder='100$'
                     value={props.lastPrice}
-                    onChange={(e) => props.setLastPrice(Number(e.target.value))}
+                    onChange={(event) => setPriceToState(event, "lastPrice")}
                 />
             </div>
         </div>
