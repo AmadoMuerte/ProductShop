@@ -10,7 +10,8 @@ function Filters() {
     const [category, setCategory] = useState<string>('')
     const [productName, setProductName] = useState<string>('')
     const [startPrice, setStartPrice] = useState<number>(0)
-    const [lastPrice, setLastPrice] = useState<number>(100)
+    const [lastPrice, setLastPrice] = useState<number>(0)
+
     const dispatch = useAppDispatch()
     const startSearchProducts = () => {
         dispatch(searchByCategory(category))
