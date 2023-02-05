@@ -1,5 +1,5 @@
 import './CategorySelect.css'
-import {useAppDispatch, useAppSelector} from "../../App/hooks";
+import {useAppSelector} from "../../App/hooks";
 import {Dispatch, SetStateAction} from "react";
 
 interface IProps {
@@ -8,9 +8,7 @@ interface IProps {
 }
 
 function CategorySelect(props: IProps) {
-    const dispatch = useAppDispatch()
     const productsData = useAppSelector(state => state.productList.productsData)
-
     let options: JSX.Element[] = []
 
     const createOptions = () => {

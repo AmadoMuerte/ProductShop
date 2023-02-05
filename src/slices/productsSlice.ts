@@ -28,28 +28,37 @@ export const productSlice = createSlice({
                     return product
                 }
             })
-            state.searching = !!action.payload;
-
         },
         searchByPrice: (state, action: PayloadAction<{startPrice: number, lastPrice: number}>) => {
-            state.searchingData = state.searchingData.filter( product => {
-                if (product.price >= action.payload.startPrice &&
-                    product.price < action.payload.lastPrice) {
-                    return product
+            let countPrice = (lastPrice: number) => {
+                state.searchingData = state.searchingData.filter( product => {
+                    if (product.price >= action.payload.startPrice &&
+                        product.price < lastPrice) {
+                        return product
+                    }
+                })
+            }
+
+            if (action.payload.lastPrice === 0) {
+                let maxPrice: number = 0
+                for (let i = 0; i < state.productsData.length; i++) {
+                    if (maxPrice < state.productsData[i].price) {
+                        maxPrice = state.productsData[i].price
+                    }
                 }
-            })
-        },
-        searchByCategory: (state, action: PayloadAction<string>) => {
-                if (action.payload !== 'none') {
-                    state.searchingData = state.productsData.filter (product => {
-                        if (product.category === action.payload) return product
-                    })
-                    state.searching = !!action.payload;
-                } else {
-                    state.searchingData = state.productsData
-                }
+                countPrice(maxPrice)
+            } else {countPrice(action.payload.lastPrice)}
         },
 
+        searchByCategory: (state, action: PayloadAction<string>) => {
+            state.searchingData = state.productsData
+            if (action.payload !== '' && action.payload !== 'none') {
+                state.searchingData = state.searchingData.filter (product => {
+                    if (product.category === action.payload) return product
+                })
+            }
+            state.searching = true
+        },
     },
 })
 
