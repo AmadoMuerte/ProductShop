@@ -18,14 +18,14 @@ function BasketProductCard(props: IBasketProps) {
                         {props.product.title}
                     </h2>
                 </NavLink>
+                <button className={'btnBuy'}>buy</button>
+            </div>
+            <div className='basketProductCard__bottom'>
+                <p>{props.product.price + '$'}</p>
                 <button
                     className='basketProductCard__btn'
                     onClick={() => props.deleteFunc(props.product.id)}>delete
                 </button>
-            </div>
-            <div className='basketProductCard__bottom'>
-                <p>{props.product.price + '$'}</p>
-                <button>buy</button>
             </div>
 
         </div>

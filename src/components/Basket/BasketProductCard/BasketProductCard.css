@@ -18,6 +18,24 @@
     position: relative;
 }
 
+.btnBuy {
+    position: absolute;
+    border: none;
+    right: 0;
+    background-color: #E98074;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 19px;
+    color: white;
+    box-shadow: 2px 3px 7px #8E8D8A;
+    transition: 0.3s;
+}
+
+.btnBuy:hover {
+    background: #E85A4F;
+}
+
 .basketProductCard__bottom {
     display: flex;
     width: 100%;
@@ -25,7 +43,7 @@
 }
 
 .basketProductCard__title {
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .basketProductCard__info {
@@ -35,21 +53,20 @@
 
 .basketProductCard__btn {
     border: none;
-    position: absolute;
     right: 0;
-    background-color: rgba(146, 237, 223, 0.92);
+    background-color: #8E8D8A;
     padding: 5px 10px;
     text-align: center;
     border-radius: 10px;
-    font-size: 16px;
-    color: #434141;
+    font-size: 14px;
+    color: white;
     box-shadow: 2px 2px 5px #cdc0c0;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .basketProductCard__btn:hover {
-    color: black;
-    background-color: rgba(216, 127, 122, 0.48);
+    color: white;
+    background-color: #E85A4F;
 }
 
 .basketProductCard__image {
@@ -67,13 +84,4 @@
 
 .basketProductCard__image img {
     width: 50%;
-}
-
-.basketProductCard__bottom button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    color: #5d6262;
-    background-color: #99eade;
 }

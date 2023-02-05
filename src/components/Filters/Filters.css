@@ -1,8 +1,8 @@
 .filters {
     position: absolute;
-    left: 40px;
+    left: 50px;
     top: 65px;
-    max-height: 300px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +23,11 @@
     border-radius: 10px;
     font-size: 16px;
     padding: 8px 20px;
-    background-color: rgba(146, 237, 223, 0.48);
+    background-color: #E98074;
+    transition: .3s;
+}
+
+.filters__button-item:hover {
+    background-color: #E85A4F;
 }
 
