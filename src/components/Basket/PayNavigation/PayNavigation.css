@@ -1,0 +1,35 @@
+.payNav {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    padding: 5px 0;
+}
+
+.payNav__btn {
+    margin-right: 10px;
+    font-size: 18px;
+    border: none;
+    padding: 2px 10px;
+    color: white;
+    background-color: #E98074;
+    border-radius: 5px;
+}
+
+.payNav__btn:hover {
+    background-color: #E85A4F;
+}
+
+.payNav__amount {
+    position: absolute;
+    font-size: 20px;
+    top: 5px;
+    right: 20px;
+    font-weight: 700;
+}
+
+.payNav__amount span {
+    color: #E85A4F;
+}
