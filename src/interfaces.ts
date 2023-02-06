@@ -1,3 +1,5 @@
+import {Dispatch, SetStateAction} from "react";
+
 export interface IProduct {
     title: string,
     price: number,
@@ -19,5 +21,9 @@ export interface IFullProduct {
 
 export interface IBasketProps {
     product: IProduct,
-    deleteFunc(id: number): void
+    deleteFunc(id: number): void,
+    checkboxStyle: string,
+    setCheckboxStyle: Dispatch<SetStateAction<string>>,
+    selectedProducts: number[],
+    setSelectedProducts: Dispatch<SetStateAction<number[]>>,
 }
