@@ -4,23 +4,19 @@ import './BasketProductCard.css'
 import {IBasketProps} from "../../../interfaces";
 import {NavLink} from "react-router-dom";
 
-
 function BasketProductCard(props: IBasketProps) {
-    let [payCheckbox, setPayCheckbox] = useState(false)
+    let [payCheckbox, setPayCheckbox] = useState(true)
 
     let changeCheckbox = () => {
         setPayCheckbox(!payCheckbox)
-        console.log(props.selectedProducts)
-        // if (props.selectedProducts.find(elem => props.product.id) !== undefined) {
-        //     props.setSelectedProducts(prevState => [...prevState, props.product.id])
-        // }
-            // else {
-        //     let idArray = props.selectedProducts.filter(id => {
-        //         return id !== props.product.id
-        //     })
-        //    props.setSelectedProducts(idArray)
-        // }
-
+        if (payCheckbox) {
+            props.setSelectedProducts( prevState => [...prevState, props.product])
+        } else {
+            let deleteProduct = props.selectedProducts.filter(product => {
+                return product.id !== props.product.id
+            })
+            props.setSelectedProducts(deleteProduct)
+        }
     }
 
     return (

@@ -24,6 +24,6 @@ export interface IBasketProps {
     deleteFunc(id: number): void,
     checkboxStyle: string,
     setCheckboxStyle: Dispatch<SetStateAction<string>>,
-    selectedProducts: number[],
-    setSelectedProducts: Dispatch<SetStateAction<number[]>>,
+    selectedProducts: IProduct[],
+    setSelectedProducts: Dispatch<SetStateAction<IProduct[]>>,
 }

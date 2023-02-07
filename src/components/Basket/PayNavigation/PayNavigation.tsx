@@ -17,7 +17,7 @@ function PayNavigation(props: {amount: number, showCheckboxes: Dispatch<SetState
         <div className='payNav'>
             <button className={'payNav__btn'} onClick={showChoice}>{buttonValue}</button>
             <button className={'payNav__btn'}>buy everything</button>
-            { props.amount ? <div className={'payNav__amount'}>amount payable: <span>{props.amount}$</span></div> : '' }
+            { props.amount > 1 ? <div className={'payNav__amount'}>amount payable: <span>{props.amount}$</span></div> : '' }
         </div>
     );
 }

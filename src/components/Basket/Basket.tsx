@@ -10,19 +10,22 @@ import PayNavigation from "./PayNavigation/PayNavigation";
 
 function Basket() {
     let [checkboxStyle, setCheckboxStyle] = useState('none')
-    let [selectedProducts, setSelectedProducts] = useState<number[]>([0])
+    let [selectedProducts, setSelectedProducts] = useState<IProduct[]>([])
+    let [basketSum, setBasketSum] = useState(0)
+
+    const dispatch = useAppDispatch()
+
+
     const basketProducts = useAppSelector(
         (state) => state.basket.basketProducts)
 
-    let sum = 0
     let countSumProducts = () => {
-        for(let i = 0; i <= basketProducts.length; i++) {
-           if (basketProducts[i].id === selectedProducts[i]) {
-               sum += basketProducts[i].price
-           }
+        let sum = 0
+        for(let i = 0; i < selectedProducts.length; i++) {
+            sum += selectedProducts[i].price
         }
+        setBasketSum(sum)
     }
-    const dispatch = useAppDispatch()
 
     let setProductsToStorage = () => {
         let products = JSON.stringify(basketProducts)
@@ -31,6 +34,7 @@ function Basket() {
 
     useEffect(() => {
         setProductsToStorage()
+        countSumProducts()
     })
 
     const deleteFunc = (id: number) => {
@@ -61,7 +65,7 @@ function Basket() {
     return (
         <div className='basket'>
             <PayNavigation
-                amount={sum}
+                amount={basketSum}
                 showCheckboxes={setCheckboxStyle}
                 checkboxStyle={checkboxStyle}/>
             {productList}
