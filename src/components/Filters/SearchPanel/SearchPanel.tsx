@@ -15,7 +15,7 @@ const SearchPanel = (props: IProps) => {
                 className="searchPanel__item"
                 placeholder='Type product name'
                 value = {props.productName}
-                onChange= {e => props.setProductName(e.target.value)}
+                onChange= {event => props.setProductName(event.target.value)}
             />
         </div>
     )

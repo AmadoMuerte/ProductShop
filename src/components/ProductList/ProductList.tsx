@@ -3,7 +3,7 @@ import axios, {AxiosResponse} from "axios";
 
 import './ProductList.css'
 import Product from "../Product/Product";
-import Skeleton from "../CssComponents/Skeleton/Skeleton";
+//import Skeleton from "../CssComponents/Skeleton/Skeleton";
 import { IFullProduct } from '../../interfaces'
 
 import {useAppDispatch, useAppSelector} from "../App/hooks";
@@ -19,7 +19,7 @@ function ProductList() {
     let productList: JSX.Element[] = []
 
     useEffect(() => {
-        getAllProduct().then(r => r)
+        getAllProduct().then(response => response)
     })
 
     const getAllProduct =  async () => {

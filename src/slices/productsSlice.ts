@@ -24,9 +24,10 @@ export const productSlice = createSlice({
         searchByName: (state, action: PayloadAction<string>) => {
             state.searchingData = state.searchingData.filter( product => {
                 let productString = product.title.toLowerCase()
-                if (productString.indexOf(action.payload) !== -1) {
-                    return product
-                }
+                // if (productString.indexOf(action.payload) !== -1) {
+                //     return product
+                // }
+                return productString.indexOf(action.payload) !== -1 ? product : ''
             })
         },
         searchByPrice: (state, action: PayloadAction<{startPrice: number, lastPrice: number}>) => {
@@ -35,7 +36,7 @@ export const productSlice = createSlice({
                     if (product.price >= action.payload.startPrice &&
                         product.price < lastPrice) {
                         return product
-                    }
+                    } else return ''
                 })
             }
 
@@ -54,7 +55,7 @@ export const productSlice = createSlice({
             state.searchingData = state.productsData
             if (action.payload !== '' && action.payload !== 'none') {
                 state.searchingData = state.searchingData.filter (product => {
-                    if (product.category === action.payload) return product
+                    return product.category === action.payload ? product : ''
                 })
             }
             state.searching = true
